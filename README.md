@@ -7,6 +7,6 @@
 
 ![博客预览2](images/README_2.png)
 
->博库模板来自于[leopardpan](https://github.com/leopardpan/leopardpan.github.io?tab=readme-ov-file "点击跳转Github仓库")
+>博库模板来自[leopardpan](https://github.com/leopardpan/leopardpan.github.io?tab=readme-ov-file "点击跳转Github仓库")
 >
 >在此衷心感谢!
