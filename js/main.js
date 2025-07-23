@@ -1,33 +1,51 @@
-$(document).ready(function() {
-
-
-  $('a.blog-button').click(function() {
-    // If already in blog, return early without animate overlay panel again.
-    if (location.hash && location.hash == "#blog") return;
-    if ($('.panel-cover').hasClass('panel-cover--collapsed')) return;
-    $('.main-post-list').removeClass('hidden');
-    currentWidth = $('.panel-cover').width();
-    if (currentWidth < 2000) {
-      $('.panel-cover').addClass('panel-cover--collapsed');
-    } else {
-      $('.panel-cover').css('max-width',currentWidth);
-      $('.panel-cover').animate({'max-width': '320px', 'width': '22%'}, 400, swing = 'swing', function() {} );
-    }
-
+// Simple vanilla JavaScript replacement for main functionality
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Function to show main post list
+  function showMainContent() {
+    const mainPostList = document.querySelector('.main-post-list');
+    const panelCover = document.querySelector('.panel-cover');
     
+    if (mainPostList) {
+      mainPostList.classList.remove('hidden');
+    }
+    
+    if (panelCover && window.innerWidth > 1100) {
+      panelCover.classList.add('panel-cover--collapsed');
+    }
+  }
+
+  // Handle blog button clicks
+  const blogButtons = document.querySelectorAll('a.blog-button');
+  blogButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      // If already in blog, return early
+      if (location.hash && location.hash === "#blog") return;
+      if (document.querySelector('.panel-cover').classList.contains('panel-cover--collapsed')) return;
+      
+      showMainContent();
+    });
   });
 
-  if (window.location.hash && window.location.hash == "#blog") {
-    $('.panel-cover').addClass('panel-cover--collapsed');
-    $('.main-post-list').removeClass('hidden');
+  // Check if we're already on the blog page
+  if (window.location.hash && window.location.hash === "#blog") {
+    showMainContent();
   }
 
-  if (window.location.pathname.substring(0, 5) == "/tag/") {
-    $('.panel-cover').addClass('panel-cover--collapsed');
+  // Check if we're on a tag page
+  if (window.location.pathname.substring(0, 5) === "/tag/") {
+    const panelCover = document.querySelector('.panel-cover');
+    if (panelCover) {
+      panelCover.classList.add('panel-cover--collapsed');
+    }
   }
 
-  $('.btn-mobile-menu__icon').click(function() {
-    // 导航按钮被点击
-    // this.style.backgroundColor = '#fff'; 设置颜色后会自动消失
-  });  
+  // Mobile menu functionality  
+  const mobileMenuButtons = document.querySelectorAll('.btn-mobile-menu__icon');
+  mobileMenuButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      // Mobile menu clicked
+      console.log('Mobile menu clicked');
+    });
+  });
 });
