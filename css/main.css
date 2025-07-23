@@ -1441,3 +1441,459 @@ nav a {
   transform: translateY(-3px);
 }
 /*导航按钮-end*/
+/* Modern Color Scheme and Enhancements */
+
+/* Update the main color palette */
+:root {
+  --primary-color: #667eea;
+  --primary-dark: #5a6fd8;
+  --accent-color: #764ba2;
+  --text-color: #2c3e50;
+  --text-light: #718096;
+  --border-color: #e2e8f0;
+  --background-white: #ffffff;
+  --background-light: #f8fafc;
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Improve the general link styling */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* Enhance post list styling */
+.post-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.post-list li {
+  background: var(--background-white);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.post-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--primary-color);
+}
+
+/* Improve post title styling */
+.post-list__post-title {
+  margin-bottom: 12px;
+}
+
+.post-title a {
+  color: var(--text-color);
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: var(--primary-color);
+}
+
+/* Enhance excerpt styling */
+.excerpt {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 0.95em;
+}
+
+/* Improve meta information styling */
+.post-list__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-light);
+  font-size: 0.85em;
+  flex-wrap: wrap;
+}
+
+.post-list__meta--date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-img-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Enhance tag styling */
+.post-list__meta--tags-right {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Improve read more button */
+.btn-border-small {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+}
+
+.btn-border-small:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+  color: white;
+}
+
+/* Enhance divider */
+.post-list__divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 0;
+}
+
+/* Improve main content wrapper */
+.content-wrapper {
+  background: var(--background-light);
+  min-height: 100vh;
+}
+
+.content-wrapper__inner {
+  padding: 40px 20px;
+}
+
+/* Make images more responsive and styled */
+.post-list img {
+  border-radius: 4px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.post-list img:hover {
+  opacity: 1;
+}
+
+/* Enhanced typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .post-list {
+    padding: 15px;
+  }
+  
+  .post-list li {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .post-list__meta {
+    gap: 12px;
+  }
+}
+
+/* Add subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post-list li {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.post-list li:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.post-list li:nth-child(3) {
+  animation-delay: 0.2s;
+}/* Additional Sidebar and Panel Enhancements */
+
+/* Improve sidebar panel styling */
+.panel-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  pointer-events: none;
+}
+
+/* Enhance avatar hover effect */
+.ih-item.circle .img {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ih-item.circle:hover .img {
+  transform: scale(1.05);
+}
+
+/* Improve navigation buttons */
+.navigation__item a {
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.navigation__item a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.navigation__item a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navigation__item a:hover::before {
+  width: 80%;
+}
+
+/* Enhance social links */
+.social-navigation .navigation__item a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.social-navigation .navigation__item a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Add subtle glow effects */
+.post-list li {
+  position: relative;
+}
+
+.post-list li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  padding: 1px;
+}
+
+.post-list li:hover::before {
+  opacity: 0.1;
+}
+
+/* Improve typography hierarchy */
+.panel-title {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.panel-subtitle {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.panel-cover__description {
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* Add loading animation for posts */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.post-list li {
+  position: relative;
+  overflow: hidden;
+}
+
+.post-list li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.post-list li:hover::after {
+  left: 100%;
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 768px) {
+  .panel-main__inner {
+    padding: 40px 15px;
+  }
+  
+  .navigation__item a {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+  
+  .post-list li {
+    border-radius: 8px;
+    padding: 20px;
+  }
+}
+
+/* Improve focus states for accessibility */
+.navigation__item a:focus,
+.btn-border-small:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Add subtle pulse animation to CTA buttons */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+.btn-border-small:hover {
+  animation: pulse 1.5s infinite;
+}/* Footer and bottom section improvements */
+
+.content-wrapper__inner {
+  position: relative;
+}
+
+/* Improve social links section */
+.cover-navigation--secondary {
+  margin-top: 30px;
+}
+
+.cover-navigation--secondary .navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.cover-navigation--secondary .navigation__item {
+  flex: none;
+}
+
+.cover-navigation--secondary .navigation__item a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85em;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.cover-navigation--secondary .navigation__item a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Improve stats section */
+.statistics {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85em;
+}
+
+/* Add some breathing room */
+.panel-main__content {
+  padding: 40px 20px;
+}
+
+/* Improve main content area footer */
+.content-wrapper__inner::after {
+  content: '';
+  display: block;
+  height: 60px;
+}
